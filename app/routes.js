@@ -2,6 +2,8 @@ const express = require('express');
 const PersonController = require('./controllers/PersonController');
 const RequestStudentController = require('./controllers/RequestStudentController');
 
+const RequestCompanyController = require('./controllers/RequestCompanyController');
+
 const router = express.Router();
 
 // Persons Routes
@@ -14,5 +16,8 @@ router.get('/persons/all', PersonController.listAll);
 
 // Request student
 router.post('/request_student', RequestStudentController.save);
+// Request_company Routes
+router.post('/request_company', RequestCompanyController.save);
+router.get('/request_company/:id(\\d+)', RequestCompanyController.find);
 
 module.exports = router;
