@@ -38,7 +38,7 @@ describe('Request CRUD flows', () => {
       society_ty_id: 1,
       city_id: 1,
       req_sta_id: 1,
-      programer_id: 1
+      programer_id: 1,
     })
     .then(async () => {
       const requestToAssert = await RequestCompanyRepository.find(1);
