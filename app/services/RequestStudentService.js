@@ -11,3 +11,10 @@ RequestStudentService.create = async (request) => {
 
   return RequestStudentRepository.create(request);
 };
+
+// eslint-disable-next-line camelcase
+RequestStudentService.findByStudentId = (student_id) => {
+  console.log('findByStudentId request student');
+
+  return RequestStudentRepository.findByStudentId(student_id);
+};

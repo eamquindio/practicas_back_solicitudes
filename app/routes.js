@@ -16,6 +16,7 @@ router.get('/persons/all', PersonController.listAll);
 
 // Request student
 router.post('/request_student', RequestStudentController.save);
+router.get('/request_student/find_by_student_id', RequestStudentController.findByStudentId);
 // Request_company Routes
 router.post('/request_company', RequestCompanyController.save);
 router.get('/request_company/:id(\\d+)', RequestCompanyController.find);
