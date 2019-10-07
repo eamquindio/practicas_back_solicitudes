@@ -15,9 +15,8 @@ RequestStudentController.save = async (req, res, next) => {
 };
 RequestStudentController.findByStudentId = async (req, res, next) => {
   try {
-    // eslint-disable-next-line camelcase
-    const { query: { student_id } } = req;
-    const request = await RequestStudentService.findByStudentId(student_id);
+    const { query: { student_id: studentId } } = req;
+    const request = await RequestStudentService.findByStudentId(studentId);
 
     if (request.length === 0) return res.status(204).send(request);
 

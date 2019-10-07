@@ -5,5 +5,5 @@ RequestStudentRepository.create = requestStudent => DB('request_student').insert
 
 RequestStudentRepository.find = id => DB('request_student').select('*').where({ id }).first();
 
-// eslint-disable-next-line camelcase
-RequestStudentRepository.findByStudentId = student_id => DB('request_student').select('*').where({ student_id });
+RequestStudentRepository.findByStudentId = studentId =>
+  DB('request_student').select('*').where({ student_id: studentId });
