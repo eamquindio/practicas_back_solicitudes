@@ -3,7 +3,6 @@ const PersonController = require('./controllers/PersonController');
 const RequestStudentController = require('./controllers/RequestStudentController');
 const SearchRequestController = require('./controllers/SearchRequestController');
 
-
 const RequestCompanyController = require('./controllers/RequestCompanyController');
 
 const router = express.Router();
