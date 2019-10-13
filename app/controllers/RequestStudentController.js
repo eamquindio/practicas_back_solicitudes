@@ -13,3 +13,17 @@ RequestStudentController.save = async (req, res, next) => {
     return next(error);
   }
 };
+RequestStudentController.findByStudentId = async (req, res, next) => {
+  try {
+    const { query: { student_id: studentId } } = req;
+    const request = await RequestStudentService.findByStudentId(studentId);
+
+    if (request.length === 0) return res.status(204).send(request);
+
+    return res.send(request);
+  } catch (error) {
+    console.log(error);
+
+    return next(error);
+  }
+};

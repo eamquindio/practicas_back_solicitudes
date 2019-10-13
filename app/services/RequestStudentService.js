@@ -11,3 +11,9 @@ RequestStudentService.create = async (request) => {
 
   return RequestStudentRepository.create(request);
 };
+
+RequestStudentService.findByStudentId = (studentId) => {
+  console.log('findByStudentId request student');
+
+  return RequestStudentRepository.findByStudentId(studentId);
+};

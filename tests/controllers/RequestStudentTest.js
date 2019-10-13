@@ -74,4 +74,62 @@ describe('Request Student CRUD flows', () => {
         assert.equal(error.status, 404);
       });
   });
+
+  it('find request student by student id test', async () => {
+    await RequestStudentRepository.create([{
+      id: 1,
+      date: '13/04/2019',
+      society: 'q',
+      requester_name: 'q',
+      agreement: 'q',
+      person_in_charge: 'q',
+      how_meet_company: 'q',
+      city_id: 1,
+      state_id: 1,
+      practice_type_id: 1,
+      student_id: 1,
+      company_id: 1,
+    }, {
+      id: 2,
+      date: '13/04/2019',
+      society: 'q',
+      requester_name: 'q',
+      agreement: 'q',
+      person_in_charge: 'q',
+      how_meet_company: 'q',
+      city_id: 1,
+      state_id: 1,
+      practice_type_id: 1,
+      student_id: 2,
+      company_id: 1,
+    }]);
+
+    return chai
+      .request(app)
+      .get(`${API}/find_by_student_id?student_id=1`)
+      .then(async (response) => {
+        const { body } = response;
+        assert.deepEqual(body[0], {
+          id: 1,
+          date: '13/04/2019',
+          society: 'q',
+          requester_name: 'q',
+          agreement: 'q',
+          person_in_charge: 'q',
+          how_meet_company: 'q',
+          city_id: 1,
+          state_id: 1,
+          practice_type_id: 1,
+          student_id: 1,
+          company_id: 1,
+        });
+      });
+  });
+
+  it('find person by student id empty test', async () => chai
+    .request(app)
+    .get(`${API}/find_by_student_id?student_id=1`)
+    .then(async (response) => {
+      assert.equal(response.status, 204);
+    }));
 });
