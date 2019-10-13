@@ -1,6 +1,7 @@
 const express = require('express');
 const PersonController = require('./controllers/PersonController');
 const RequestStudentController = require('./controllers/RequestStudentController');
+const SearchRequestController = require('./controllers/SearchRequestController');
 
 const RequestCompanyController = require('./controllers/RequestCompanyController');
 
@@ -20,5 +21,9 @@ router.get('/request_student/find_by_student_id', RequestStudentController.findB
 // Request_company Routes
 router.post('/request_company', RequestCompanyController.save);
 router.get('/request_company/:id(\\d+)', RequestCompanyController.find);
+
+// Search Request
+router.get('/request/:id(\\d+)', SearchRequestController.find);
+router.post('/request', SearchRequestController.save);
 
 module.exports = router;

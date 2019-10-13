@@ -11,4 +11,6 @@ Helpers.clear = async () => {
   await db('request_student').del();
 
   await db('request_company').del();
+
+  await db('request').del();
 };
