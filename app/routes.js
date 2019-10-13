@@ -21,4 +21,8 @@ router.post('/request_student', RequestStudentController.save);
 router.post('/request_company', RequestCompanyController.save);
 router.get('/request_company/:id(\\d+)', RequestCompanyController.find);
 
+// Search Request
+router.get('/request/:id(\\d+)', SearchRequestController.find);
+router.post('/request', SearchRequestController.save);
+
 module.exports = router;
