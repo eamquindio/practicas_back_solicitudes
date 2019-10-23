@@ -1,9 +1,9 @@
 const HomologationController = module.exports;
 const HomologationService = require('../services/HomologationService');
 
-HomologationController.save = async (req, res, next) =>{
+HomologationController.save = async (req, res, next) => {
   const { body } = req;
-  try{
+  try {
     await HomologationService.create(body);
 
     return res.send();
