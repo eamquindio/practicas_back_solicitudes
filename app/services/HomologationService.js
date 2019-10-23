@@ -8,7 +8,7 @@ HomologationService.create = async (homologation) => {
   const homologationToValidate = await this.find(homologation.id);
   console.log(homologationToValidate);
   if (HomologationService) throw ErrorHandler.BaseError('homologation already exists', 409);
- 
+
   return HomologationRespository.create(homologation);
 };
 
