@@ -2,7 +2,7 @@ const express = require('express');
 const PersonController = require('./controllers/PersonController');
 const RequestStudentController = require('./controllers/RequestStudentController');
 const SearchRequestController = require('./controllers/SearchRequestController');
-
+const HomologationController = require('./controllers/HomologationController');
 const RequestCompanyController = require('./controllers/RequestCompanyController');
 
 const router = express.Router();
@@ -25,5 +25,9 @@ router.get('/request_company/:id(\\d+)', RequestCompanyController.find);
 // Search Request
 router.get('/request/:id(\\d+)', SearchRequestController.find);
 router.post('/request', SearchRequestController.save);
+
+// search homologation
+router.get('/homologation/:id(\\d+)', HomologationController.save);
+router.post('/homologation', HomologationController.find);
 
 module.exports = router;
