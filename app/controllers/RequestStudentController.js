@@ -8,7 +8,7 @@ RequestStudentController.save = async (req, res, next) => {
     await RequestStudentService.create(body);
 
     return res.send();
-} catch (error) {
+  } catch (error) {
     console.log({ error });
 
     return next(error);
