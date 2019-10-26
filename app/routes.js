@@ -27,7 +27,7 @@ router.get('/request/:id(\\d+)', SearchRequestController.find);
 router.post('/request', SearchRequestController.save);
 
 // search homologation
-router.get('/homologation/:id(\\d+)', HomologationController.save);
-router.post('/homologation', HomologationController.find);
+router.get('/homologation/:id(\\d+)', HomologationController.find);
+router.post('/homologation', HomologationController.save);
 
 module.exports = router;
