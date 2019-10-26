@@ -27,7 +27,7 @@ router.post('/request', SearchRequestController.save);
 router.get('/homologacion/:id(\\d+)', HomologationController.find);
 router.post('/homologacion', HomologationController.save);
 // Request status
-router.put('/request_company/:id(\\d+)',RequestCompanyController.editStatus);
-router.put('/request_student/:id(\\d+)',RequestStudentController.editStatus);
+router.put('/request_company/:id(\\d+)', RequestCompanyController.editStatus);
+router.put('/request_student/:id(\\d+)', RequestStudentController.editStatus);
 
 module.exports = router;
