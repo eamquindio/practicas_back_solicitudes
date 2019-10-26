@@ -18,8 +18,8 @@ RequestStudentService.findByStudentId = (studentId) => {
   return RequestStudentRepository.findByStudentId(studentId);
 };
 
-RequestStudentService.editStatus = (id) => {
+RequestStudentService.editStatus = (id, estado) => {
   console.log('edit status request student');
 
-  return RequestStudentRepository.editStatus(id, 'cancelada');
+  return RequestStudentRepository.editStatus(id, estado);
 };
