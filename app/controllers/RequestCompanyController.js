@@ -2,7 +2,6 @@ const RequestCompanyController = module.exports;
 const RequestCompanyService = require('../services/RequestCompanyService');
 const ErrorHandler = require('../utils/ErrorHandlerMiddleware');
 
-
 RequestCompanyController.save = async (req, res, next) => {
   const { body } = req;
   try {

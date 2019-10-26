@@ -1,5 +1,6 @@
 const RequestStudentController = module.exports;
 const RequestStudentService = require('../services/RequestStudentService');
+const ErrorHandler = require('../utils/ErrorHandlerMiddleware');
 
 RequestStudentController.save = async (req, res, next) => {
   const { body } = req;
@@ -7,7 +8,7 @@ RequestStudentController.save = async (req, res, next) => {
     await RequestStudentService.create(body);
 
     return res.send();
-  } catch (error) {
+} catch (error) {
     console.log({ error });
 
     return next(error);
