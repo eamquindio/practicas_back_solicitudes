@@ -21,7 +21,7 @@ HomologationController.find = async (req, res, next) => {
     const homologation = await HomologationService.find(id);
 
     if (!homologation) return next(new ErrorHandler.BaseError('homologation not exists', 404));
-    
+
     return res.send(homologation);
   } catch (error) {
     console.log(error);
