@@ -17,3 +17,9 @@ RequestCompanyService.find = (request) => {
 
   return RequestCompanyRepository.find(request);
 };
+
+RequestCompanyService.editStatus = (id) => {
+  console.log('edit status convocatoria');
+
+  return RequestCompanyRepository.editStatus(id, 'cancelada');
+};

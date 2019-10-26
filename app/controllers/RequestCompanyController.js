@@ -30,3 +30,19 @@ RequestCompanyController.find = async (req, res, next) => {
     return next(error);
   }
 };
+
+RequestCompanyController.editStatus = async (req, res, next) => {
+  try {
+    const { params: { id } } = req;
+    console.log({ id });
+    const solicitud = await RequestCompanyService.editStatus(id);
+
+    if (!solicitud) return next(new ErrorHandler.BaseError('solicitud not exists', 404));
+
+    return res.send(solicitud);
+  } catch (error) {
+    console.log(error);
+
+    return next(error);
+  }
+};

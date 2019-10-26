@@ -21,13 +21,14 @@ router.get('/request_student/find_by_student_id', RequestStudentController.findB
 // Request_company Routes
 router.post('/request_company', RequestCompanyController.save);
 router.get('/request_company/:id(\\d+)', RequestCompanyController.find);
-
 // Search Request
 router.get('/request/:id(\\d+)', SearchRequestController.find);
 router.post('/request', SearchRequestController.save);
-
 // search homologation
 router.get('/homologacion/:id(\\d+)', HomologationController.find);
 router.post('/homologacion', HomologationController.save);
+//Request status
+router.put('/request_company/:id(\\d+)',RequestCompanyContoller.editStatus);
+router.put('/request_student/:id(\\d+)',RequestStudentContoller.editStatus);
 
 module.exports = router;
