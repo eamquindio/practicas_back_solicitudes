@@ -17,3 +17,9 @@ RequestCompanyService.find = (request) => {
 
   return RequestCompanyRepository.find(request);
 };
+
+RequestCompanyService.editStatus = (id, estado) => {
+  console.log('edit status request company');
+
+  return RequestCompanyRepository.editStatus(id, estado);
+};

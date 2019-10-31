@@ -7,3 +7,7 @@ RequestStudentRepository.find = id => DB('request_student').select('*').where({ 
 
 RequestStudentRepository.findByStudentId = studentId =>
   DB('request_student').select('*').where({ student_id: studentId });
+
+RequestStudentRepository.editStatus = (id, estado) =>
+  DB('request_student').update({ estado }).where({ id }).returning('*');
+

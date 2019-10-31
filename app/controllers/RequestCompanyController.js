@@ -2,7 +2,6 @@ const RequestCompanyController = module.exports;
 const RequestCompanyService = require('../services/RequestCompanyService');
 const ErrorHandler = require('../utils/ErrorHandlerMiddleware');
 
-
 RequestCompanyController.save = async (req, res, next) => {
   const { body } = req;
   try {
@@ -24,6 +23,22 @@ RequestCompanyController.find = async (req, res, next) => {
     if (!company) return next(new ErrorHandler.BaseError('request company not exists', 404));
 
     return res.send(company);
+  } catch (error) {
+    console.log(error);
+
+    return next(error);
+  }
+};
+
+RequestCompanyController.editStatus = async (req, res, next) => {
+  try {
+    const { params: { id, estado } } = req;
+    console.log({ id, estado });
+    const solicitud = await RequestCompanyService.editStatus(id, estado);
+
+    if (!solicitud) return next(new ErrorHandler.BaseError('request not exists', 404));
+
+    return res.send(solicitud);
   } catch (error) {
     console.log(error);
 
