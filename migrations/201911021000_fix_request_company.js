@@ -1,19 +1,18 @@
 exports.up = knex =>
   knex.schema.table('request_company', (table) => {
-    table.string('person_type').alter();
-    table.string('movil').alter();
-    table.string('description').alter();
-    table.string('requirements').alter();
-    table.string('observations').alter();
-    table.string('level').alter();
+    table.string('person_type');
+    table.string('movil');
+    table.string('description');
+    table.string('requirements');
+    table.string('observations');
+    table.string('level');
   });
 
 exports.down = knex =>
   knex.schema.table('request_company', (table) => {
-    table.drop('chief_charge');
-    table.drop('society_ty_id');
-    table.drop('city_id');
-    table.drop('req_sta_id');
-    table.drop('head_area');
+    table.dropColumn('chief_charge');
+    table.dropColumn('society_ty_id');
+    table.dropColumn('city_id');
+    table.dropColumn('req_sta_id');
+    table.dropColumn('head_area');
   });
-
