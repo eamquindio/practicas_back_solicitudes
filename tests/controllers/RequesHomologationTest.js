@@ -40,9 +40,9 @@ describe('Homologation CRUD flows', () => {
       email_company: 'yuxi@hotmail.com',
       phone_contact: '3125657887',
     })
-   .then(async () => {
-     const requestToAssert = await HomologationRespository.find(1);
-     assert.equal(requestToAssert.id, 1);
+    .then(async () => {
+      const requestToAssert = await HomologationRespository.find(1);
+      assert.equal(requestToAssert.id, 1);
    }));
 
   it('find request test', async () => {

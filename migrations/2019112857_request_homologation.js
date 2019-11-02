@@ -22,4 +22,4 @@ exports.up = knex =>
     table.string('phone_contact');
   });
 
-exports.down =knex => knex.schema.dropTable('homologation');
+exports.down = knex => knex.schema.dropTable('homologation');
