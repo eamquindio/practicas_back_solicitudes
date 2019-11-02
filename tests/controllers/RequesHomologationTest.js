@@ -43,7 +43,7 @@ describe('Homologation CRUD flows', () => {
     .then(async () => {
       const requestToAssert = await HomologationRespository.find(1);
       assert.equal(requestToAssert.id, 1);
-   }));
+    }));
 
   it('find request test', async () => {
     await HomologationRespository.create({
