@@ -2,14 +2,13 @@ const HomologationService = module.exports;
 const HomologationRespository = require('../repositories/HomologationRespository');
 const ErrorHandler = require('../utils/ErrorHandlerMiddleware');
 
-HomologationService.create = async (homologation) => {
+HomologationService.create = async (body) => {
   console.log('creating homologation');
-
-  const homologationToValidate = await this.find(homologation.id);
+  const homologationToValidate = await this.find(body.id);
   console.log(homologationToValidate);
-  if (HomologationService) throw ErrorHandler.BaseError('homologation already exists', 409);
+  if (homologationToValidate) throw ErrorHandler.BaseError('homologation already exists', 409);
 
-  return HomologationRespository.create(homologation);
+  return HomologationRespository.create(body);
 };
 
 HomologationService.find = (homologation) => {

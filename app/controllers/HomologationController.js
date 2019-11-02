@@ -5,6 +5,7 @@ const ErrorHandler = require('../utils/ErrorHandlerMiddleware');
 HomologationController.save = async (req, res, next) => {
   const { body } = req;
   try {
+    console.log(body);
     await HomologationService.create(body);
 
     return res.send();
