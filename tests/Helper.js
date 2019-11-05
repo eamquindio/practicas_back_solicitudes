@@ -13,4 +13,6 @@ Helpers.clear = async () => {
   await db('request_company').del();
 
   await db('request').del();
+
+  await db('homologation').del();
 };
