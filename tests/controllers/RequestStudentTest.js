@@ -24,7 +24,7 @@ describe('Request Student CRUD flows', () => {
       state_id: 1,
       practice_type_id: 1,
       student_id: 1,
-      NIT: 1,
+      NIT: '1',
     })
     .then(async () => {
       const requestStduentToAssert = await RequestStudentRepository.find(1);
@@ -38,7 +38,7 @@ describe('Request Student CRUD flows', () => {
       state_id: 1,
       practice_type_id: 1,
       student_id: 1,
-      NIT: 1,
+      NIT: '1',
     });
 
     return chai
@@ -50,7 +50,7 @@ describe('Request Student CRUD flows', () => {
         state_id: 1,
         practice_type_id: 1,
         student_id: 1,
-        NIT: 1,
+        NIT: '1',
       })
       .catch((error) => {
         assert.equal(error.status, 404);
@@ -64,14 +64,14 @@ describe('Request Student CRUD flows', () => {
       state_id: 1,
       practice_type_id: 1,
       student_id: 1,
-      NIT: 1,
+      NIT: '1',
     }, {
-      id: 3,
+      id: 2,
       how_meet_company: 'q',
       state_id: 1,
       practice_type_id: 1,
       student_id: 1,
-      NIT: 1,
+      NIT: '1',
     }]);
 
     return chai
@@ -85,7 +85,7 @@ describe('Request Student CRUD flows', () => {
           state_id: 1,
           practice_type_id: 1,
           student_id: 1,
-          NIT: 1,
+          NIT: '1',
         });
       });
   });
