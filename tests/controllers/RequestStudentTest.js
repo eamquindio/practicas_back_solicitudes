@@ -20,10 +20,17 @@ describe('Request Student CRUD flows', () => {
     .post(API)
     .send({
       id: 1,
+      date: '',
+      society: '',
+      requester_name: '',
+      agreement: '',
+      person_in_charge: '',
       how_meet_company: 'q',
+      city_id: 1,
       state_id: 1,
       practice_type_id: 1,
       student_id: 1,
+      company_id: 1,
       NIT: '1',
     })
     .then(async () => {
@@ -34,10 +41,17 @@ describe('Request Student CRUD flows', () => {
   it('create request student already exists test', async () => {
     await RequestStudentRepository.create({
       id: 1,
+      date: '',
+      society: '',
+      requester_name: '',
+      agreement: '',
+      person_in_charge: '',
       how_meet_company: 'q',
+      city_id: 1,
       state_id: 1,
       practice_type_id: 1,
       student_id: 1,
+      company_id: 1,
       NIT: '1',
     });
 
@@ -46,10 +60,17 @@ describe('Request Student CRUD flows', () => {
       .post(API)
       .send({
         id: 1,
+        date: '',
+        society: '',
+        requester_name: '',
+        agreement: '',
+        person_in_charge: '',
         how_meet_company: 'q',
+        city_id: 1,
         state_id: 1,
         practice_type_id: 1,
         student_id: 1,
+        company_id: 1,
         NIT: '1',
       })
       .catch((error) => {
@@ -60,17 +81,31 @@ describe('Request Student CRUD flows', () => {
   it('find request student by student id test', async () => {
     await RequestStudentRepository.create([{
       id: 1,
+      date: '',
+      society: '',
+      requester_name: '',
+      agreement: '',
+      person_in_charge: '',
       how_meet_company: 'q',
+      city_id: 1,
       state_id: 1,
       practice_type_id: 1,
       student_id: 1,
+      company_id: 1,
       NIT: '1',
     }, {
       id: 2,
+      date: '',
+      society: '',
+      requester_name: '',
+      agreement: '',
+      person_in_charge: '',
       how_meet_company: 'q',
+      city_id: 1,
       state_id: 1,
       practice_type_id: 1,
       student_id: 1,
+      company_id: 1,
       NIT: '1',
     }]);
 
@@ -81,10 +116,17 @@ describe('Request Student CRUD flows', () => {
         const { body } = response;
         assert.deepEqual(body[0], {
           id: 1,
+          date: '',
+          society: '',
+          requester_name: '',
+          agreement: '',
+          person_in_charge: '',
           how_meet_company: 'q',
+          city_id: 1,
           state_id: 1,
           practice_type_id: 1,
           student_id: 1,
+          company_id: 1,
           NIT: '1',
         });
       });
