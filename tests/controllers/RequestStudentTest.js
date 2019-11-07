@@ -66,7 +66,7 @@ describe('Request Student CRUD flows', () => {
       student_id: 1,
       NIT: 1,
     }, {
-      id: 2,
+      id: 3,
       how_meet_company: 'q',
       state_id: 1,
       practice_type_id: 1,
