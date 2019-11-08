@@ -20,17 +20,18 @@ describe('Request Student CRUD flows', () => {
     .post(API)
     .send({
       id: 1,
-      date: '13/04/2019',
-      society: 'q',
-      requester_name: 'q',
-      agreement: 'q',
-      person_in_charge: 'q',
+      date: '',
+      society: '',
+      requester_name: '',
+      agreement: '',
+      person_in_charge: '',
       how_meet_company: 'q',
       city_id: 1,
       state_id: 1,
       practice_type_id: 1,
       student_id: 1,
       company_id: 1,
+      NIT: '1',
     })
     .then(async () => {
       const requestStduentToAssert = await RequestStudentRepository.find(1);
@@ -40,17 +41,18 @@ describe('Request Student CRUD flows', () => {
   it('create request student already exists test', async () => {
     await RequestStudentRepository.create({
       id: 1,
-      date: '13/04/2019',
-      society: 'q',
-      requester_name: 'q',
-      agreement: 'q',
-      person_in_charge: 'q',
+      date: '',
+      society: '',
+      requester_name: '',
+      agreement: '',
+      person_in_charge: '',
       how_meet_company: 'q',
       city_id: 1,
       state_id: 1,
       practice_type_id: 1,
       student_id: 1,
       company_id: 1,
+      NIT: '1',
     });
 
     return chai
@@ -58,17 +60,18 @@ describe('Request Student CRUD flows', () => {
       .post(API)
       .send({
         id: 1,
-        date: '13/04/2019',
-        society: 'q',
-        requester_name: 'q',
-        agreement: 'q',
-        person_in_charge: 'q',
+        date: '',
+        society: '',
+        requester_name: '',
+        agreement: '',
+        person_in_charge: '',
         how_meet_company: 'q',
         city_id: 1,
         state_id: 1,
         practice_type_id: 1,
         student_id: 1,
         company_id: 1,
+        NIT: '1',
       })
       .catch((error) => {
         assert.equal(error.status, 404);
@@ -78,30 +81,32 @@ describe('Request Student CRUD flows', () => {
   it('find request student by student id test', async () => {
     await RequestStudentRepository.create([{
       id: 1,
-      date: '13/04/2019',
-      society: 'q',
-      requester_name: 'q',
-      agreement: 'q',
-      person_in_charge: 'q',
+      date: '',
+      society: '',
+      requester_name: '',
+      agreement: '',
+      person_in_charge: '',
       how_meet_company: 'q',
       city_id: 1,
       state_id: 1,
       practice_type_id: 1,
       student_id: 1,
       company_id: 1,
+      NIT: '1',
     }, {
       id: 2,
-      date: '13/04/2019',
-      society: 'q',
-      requester_name: 'q',
-      agreement: 'q',
-      person_in_charge: 'q',
+      date: '',
+      society: '',
+      requester_name: '',
+      agreement: '',
+      person_in_charge: '',
       how_meet_company: 'q',
       city_id: 1,
       state_id: 1,
       practice_type_id: 1,
-      student_id: 2,
+      student_id: 1,
       company_id: 1,
+      NIT: '1',
     }]);
 
     return chai
@@ -111,17 +116,18 @@ describe('Request Student CRUD flows', () => {
         const { body } = response;
         assert.deepEqual(body[0], {
           id: 1,
-          date: '13/04/2019',
-          society: 'q',
-          requester_name: 'q',
-          agreement: 'q',
-          person_in_charge: 'q',
+          date: '',
+          society: '',
+          requester_name: '',
+          agreement: '',
+          person_in_charge: '',
           how_meet_company: 'q',
           city_id: 1,
           state_id: 1,
           practice_type_id: 1,
           student_id: 1,
           company_id: 1,
+          NIT: '1',
         });
       });
   });
