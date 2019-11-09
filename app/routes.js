@@ -4,6 +4,7 @@ const RequestStudentController = require('./controllers/RequestStudentController
 const SearchRequestController = require('./controllers/SearchRequestController');
 const HomologationController = require('./controllers/HomologationController');
 const RequestCompanyController = require('./controllers/RequestCompanyController');
+const ListRequestController = require('./controllers/ListRequestController');
 
 const router = express.Router();
 
@@ -29,5 +30,7 @@ router.post('/homologacion', HomologationController.save);
 // Request status
 router.put('/request_company/:id(\\d+)', RequestCompanyController.editStatus);
 router.put('/request_student/:id(\\d+)', RequestStudentController.editStatus);
+// List request
+router.get('/request', ListRequestController.listAll);
 
 module.exports = router;
