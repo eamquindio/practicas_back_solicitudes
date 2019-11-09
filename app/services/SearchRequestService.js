@@ -17,3 +17,4 @@ SearchRequestService.find = (request) => {
 
   return SearchRequestRepository.find(request);
 };
+
