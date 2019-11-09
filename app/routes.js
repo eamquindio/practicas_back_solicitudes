@@ -30,7 +30,7 @@ router.post('/homologacion', HomologationController.save);
 // Request status
 router.put('/request_company/:id(\\d+)', RequestCompanyController.editStatus);
 router.put('/request_student/:id(\\d+)', RequestStudentController.editStatus);
-//List request
+// List request
 router.get('/request', ListRequestController.listAll);
 
 module.exports = router;
